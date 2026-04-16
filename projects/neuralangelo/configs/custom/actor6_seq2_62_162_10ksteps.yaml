@@ -1,7 +1,0 @@
-_parent_: projects/neuralangelo/configs/custom/iterative_exps_bg.yaml
-data:
-    root: ../../neuralangelo4d/datasets/actor6_seq2_62_162/
-    num_frames: 65
-model:
-    object:
-        canonical_dir: logs/dynamic_reconstruction/actor6_seq2_62_162_canonical_replicate/epoch_08333_iteration_000250000_checkpoint.pt

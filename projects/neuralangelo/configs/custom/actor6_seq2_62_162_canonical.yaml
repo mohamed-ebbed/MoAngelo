@@ -1,3 +1,0 @@
-_parent_: projects/neuralangelo/configs/custom/canonical_experiments.yaml
-data:
-    root: datasets/actor6_seq2_62_162/

@@ -10,7 +10,7 @@
 
 logging_iter: 9999999999999  # disable the printing logger
 
-max_iter: 500000
+max_iter: 250000
 
 wandb_scalar_iter: 100
 wandb_image_iter: 10000
@@ -18,7 +18,7 @@ validation_iter: 5000
 speed_benchmark: False
 
 checkpoint:
-    save_iter: 20000
+    save_iter: 10000
 
 trainer:
     type: projects.neuralangelo.trainer
@@ -28,7 +28,8 @@ trainer:
     loss_weight:
         render: 1.0
         eikonal: 0.1
-        curvature: 5e-4
+        curvature: 0
+        mask: 0.1
     init:
         type: none
     amp_config:
@@ -41,7 +42,7 @@ model:
         sdf:
             mlp:
                 num_layers: 1
-                hidden_dim: 256
+                hidden_dim: 64
                 skip: []
                 activ: softplus
                 activ_params:
@@ -61,15 +62,15 @@ model:
                     range: [-2,2]
                 coarse2fine:
                     enabled: True
-                    init_active_level: 4
+                    init_active_level: 2
                     step: 5000
             gradient:
                 mode: numerical
                 taps: 4
         rgb:
             mlp:
-                num_layers: 4
-                hidden_dim: 256
+                num_layers: 2
+                hidden_dim: 64
                 skip: []
                 activ: relu_
                 activ_params: {}
@@ -123,7 +124,7 @@ optim:
         iteration_mode: True
         type: two_steps_with_warmup
         warm_up_end: 5000
-        two_steps: [300000,400000]
+        two_steps: [150000,200000]
         gamma: 10.0
 
 data:

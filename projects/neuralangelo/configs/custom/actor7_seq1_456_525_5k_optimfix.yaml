@@ -1,7 +1,0 @@
-_parent_: projects/neuralangelo/configs/custom/iterative_exps.yaml
-data:
-    root: datasets/actor7_seq1_456_525/
-    num_frames: 70
-model:
-    object:
-        canonical_dir: logs/dynamic_reconstruction/actor7_seq1_456_525_canonical/epoch_08333_iteration_000250000_checkpoint.pt

@@ -1,3 +1,0 @@
-_parent_: projects/neuralangelo/configs/custom/canonical_experiments.yaml
-data:
-    root: ../../neuralangelo4d/datasets/actor8_seq2_535_650/

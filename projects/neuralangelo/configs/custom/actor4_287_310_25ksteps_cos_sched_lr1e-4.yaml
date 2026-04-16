@@ -1,7 +1,0 @@
-_parent_: projects/neuralangelo/configs/custom/iterative_exps_bg_25.yaml
-data:
-    root: ../../neuralangelo4d/datasets/actor4_287_310/
-    num_frames: 30
-model:
-    object:
-        canonical_dir: logs/dynamic_reconstruction/actor4_287_310_canonical_replicate/epoch_08333_iteration_000250000_checkpoint.pt

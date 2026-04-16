@@ -1,3 +1,0 @@
-_parent_: projects/neuralangelo/configs/custom/canonical_experiments.yaml
-data:
-    root: datasets/actor4_73_170/
