@@ -1,0 +1,28 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    type: projects.neuralangelo.multicam_data
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: datasets/actor1_origin/
+    train:
+        image_size:
+        - 1022
+        - 747
+    val:
+        image_size:
+        - 511
+        - 373
+model:
+    appear_embed:
+        enabled: false
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            mlp:
+                inside_out: false

@@ -1,0 +1,3 @@
+_parent_: projects/neuralangelo/configs/custom/canonical_experiments.yaml
+data:
+    root: ../../actorshq_sequences/actor1_seq1_1837_1937/

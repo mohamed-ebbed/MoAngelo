@@ -1,0 +1,55 @@
+max_iter: 20000
+_parent_: projects/neuralangelo/configs/neus2_less_iter.yaml
+data:
+    type: projects.neuralangelo.multicam_data
+    canonical: false
+    target_frame: 2
+    num_frames: 24
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: datasets/actor4_287_310/
+    train:
+        image_size:
+        - 1022
+        - 747
+    val:
+        image_size:
+        - 511
+        - 373
+model:
+    appear_embed:
+        enabled: false
+    object:
+        canonical_dir: logs/dynamic_reconstruction/actor4_template_large_movement/canonical.pt
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 16
+            mlp:
+                inside_out: false
+        deform:
+            encoding:
+                type: hashgrid  
+                levels: 16
+                hashgrid:
+                    min_logres: 5
+                    max_logres: 11
+                    dict_size: 20
+                    dim: 4
+                    range: [-2,2]
+                coarse2fine:
+                    enabled: True
+                    init_active_level: 4
+                    step: 1000
+
+optim:
+    sched:
+        iteration_mode: True
+        type: two_steps_with_warmup
+        warm_up_end: 40
+        two_steps: [12000,18000]
+        gamma: 10.0

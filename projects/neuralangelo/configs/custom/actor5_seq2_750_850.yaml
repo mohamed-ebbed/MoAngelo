@@ -1,0 +1,3 @@
+_parent_: projects/neuralangelo/configs/custom/canonical_experiments.yaml
+data:
+    root: ../../actorshq_sequences/actor5_seq2_750_850/

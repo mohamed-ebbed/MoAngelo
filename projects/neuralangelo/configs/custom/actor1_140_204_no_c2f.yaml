@@ -1,0 +1,7 @@
+_parent_: projects/neuralangelo/configs/custom/iterative_exps_noc2f.yaml
+data:
+    root: datasets/actor1_140_204/
+    num_frames: 65
+model:
+    object:
+        canonical_dir: logs/dynamic_reconstruction/actor1_140_204_canonical/epoch_08333_iteration_000250000_checkpoint.pt

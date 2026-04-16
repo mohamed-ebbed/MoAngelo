@@ -1,0 +1,35 @@
+_parent_: projects/neuralangelo/configs/neus2_less_iter.yaml
+data:
+    type: projects.neuralangelo.multicam_data
+    canonical: true
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: datasets/actor4_73_170/
+    train:
+        image_size:
+        - 1022
+        - 747
+    val:
+        image_size:
+        - 511
+        - 373
+model:
+    appear_embed:
+        enabled: false
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            gradient:
+                mode: analytical
+            mlp:
+                inside_out: false
+    background:
+        enabled: False
+        white: False
+

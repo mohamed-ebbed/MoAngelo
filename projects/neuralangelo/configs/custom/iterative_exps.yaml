@@ -1,0 +1,74 @@
+max_iter: 25000
+_parent_: projects/neuralangelo/configs/neus2_less_iter.yaml
+data:
+    type: projects.neuralangelo.multicam_data
+    canonical: false
+    target_frame: 2
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: datasets/actor4_287_310/
+    train:
+        image_size:
+        - 1022
+        - 747
+    val:
+        image_size:
+        - 511
+        - 373
+model:
+    background:
+        enabled: False
+        white: False
+    appear_embed:
+        enabled: false
+    object:
+        canonical_dir: logs/dynamic_reconstruction/actor4_template_nobgr_analytical/epoch_08333_iteration_000250000_checkpoint.pt
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 16
+            mlp:
+                inside_out: false
+            gradient:
+                mode: analytical
+        deform:
+            prev_init: True
+            tune_template: True
+            encoding:
+                type: hashgrid  
+                levels: 16
+                hashgrid:
+                    min_logres: 5
+                    max_logres: 11
+                    dict_size: 20
+                    dim: 2
+                    range: [-2,2]
+                coarse2fine:
+                    enabled: True
+                    init_active_level: 4
+                    step: 1000
+            mlp:
+                num_layers: 1
+                hidden_dim: 64
+                output_dim: 6
+                skip: []
+                activ: softplus
+                activ_params: {beta: 100}
+                weight_norm: True
+
+optim:
+    type: AdamW
+    params:
+        lr: 1e-4
+        weight_decay: 1e-2
+    sched:
+        iteration_mode: True
+        type: two_steps_with_warmup
+        warm_up_end: 500
+        two_steps: [100000,150000]
+        gamma: 5.0
+    

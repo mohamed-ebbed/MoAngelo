@@ -1,0 +1,28 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 2.0
+    root: datasets/actor1/
+    train:
+        image_size:
+        - 1016
+        - 742
+    type: projects.neuralangelo.data
+    val:
+        image_size:
+        - 410
+        - 300
+model:
+    appear_embed:
+        enabled: false
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 4
+            mlp:
+                inside_out: false

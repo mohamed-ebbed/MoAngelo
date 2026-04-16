@@ -1,0 +1,33 @@
+_parent_: projects/neuralangelo/configs/base.yaml
+data:
+    readjust:
+        center:
+        - 0.0
+        - 0.0
+        - 0.0
+        scale: 1.0
+    root: datasets/mohamed_stage/
+    train:
+        image_size:
+        - 914
+        - 1057
+    type: projects.neuralangelo.data
+    val:
+        image_size:
+        - 300
+        - 346
+model:
+    appear_embed:
+        enabled: false
+    background:
+        enabled: false
+    object:
+        sdf:
+            encoding:
+                coarse2fine:
+                    init_active_level: 8
+            mlp:
+                inside_out: true
+    render:
+        num_samples:
+            background: 0
