@@ -1,4 +1,4 @@
-_parent_: projects/neuralangelo/configs/neus2_less_iter.yaml
+_parent_: projects/neuralangelo/configs/base.yaml
 data:
     type: projects.neuralangelo.multicam_data
     canonical: true

@@ -67,8 +67,9 @@ def bound_by_points(xyzs):
 def actorshq_to_json(args):
 
     # Read the calibration and aabbs data
-    calibration_dir = os.path.join(args.dataroot,"calibration.csv")
-    aabbs_dir = os.path.join(args.dataroot, "../aabbs.csv")
+    data_dir = os.path.join(args.dataroot, args.scale)
+    calibration_dir = os.path.join(data_dir, "calibration.csv")
+    aabbs_dir = os.path.join(args.dataroot, "aabbs.csv")
     calibration_df = pd.read_csv(calibration_dir)
     aabbs_df = pd.read_csv(aabbs_dir)
 
@@ -134,8 +135,6 @@ def actorshq_to_json(args):
     bbox_centered = bbox - center
 
     radius = np.linalg.norm(bbox_centered, axis=-1).max()
-
-    print(radius)
     
     json_data = {
         "is_fisheye": False,  # TODO: not supporting fish eye camera
@@ -156,16 +155,14 @@ def actorshq_to_json(args):
         for j in range(args.frame_start, args.frame_end+1):
             time_step += 1
             image_dir = os.path.join(args.output_dir, "images", f"{camera_names[i]}_rgb{j:06d}.png")
-            shutil.copyfile(os.path.join(args.dataroot, "rgbs", camera_names[i], f"{camera_names[i]}_rgb{j:06d}.jpg"), image_dir)
-            shutil.copyfile(os.path.join(args.dataroot, "masks", camera_names[i], f"{camera_names[i]}_mask{j:06d}.png"), os.path.join(args.output_dir, "masks", f"{camera_names[i]}_mask{j:06d}.png"))
+            shutil.copyfile(os.path.join(data_dir, "rgbs", camera_names[i], f"{camera_names[i]}_rgb{j:06d}.jpg"), image_dir)
+            shutil.copyfile(os.path.join(data_dir, "masks", camera_names[i], f"{camera_names[i]}_mask{j:06d}.png"), os.path.join(args.output_dir, "masks", f"{camera_names[i]}_mask{j:06d}.png"))
             frame = {"file_path": os.path.join("images", f"{camera_names[i]}_rgb{j:06d}.png"), "transform_matrix": c2w.tolist(), "camera_angle_x": angle_x[i], "camera_angle_y": angle_y[i], "fx": fx[i], "fy": fy[i], "cx": px[i], "py": py[i], "time_step": time_step}
             json_data["frames"].append(frame)
     json_data["num_frames"] = args.frame_end - args.frame_start + 1
     points = np.concatenate(points,axis=0)
 
     json_data["num_cameras"] = len(camera_names)
-
-    print(json_data["num_frames"])
     
     #center, radius, bounding_box = bound_by_points(points)
 
@@ -187,7 +184,8 @@ if __name__ == "__main__":
     parser.add_argument("--frame_end", type=int, default=0, help = "end frame")
     parser.add_argument("--output_dir", type=str, default=None, help="Path to data")
     parser.add_argument("--dataroot", type=str, help = "dataset_directory")    
-    parser.add_argument("--aspect_ratio", type=str, help = "select from height_larger, width_larger or both")
+    parser.add_argument("--aspect_ratio", type=str, help="select from height_larger, width_larger or both")
+    parser.add_argument("--scale", type=str, default="4x", help="resolution sub-folder inside dataroot (e.g. 4x, 2x, 1x)")
 
     args = parser.parse_args()
     actorshq_to_json(args)

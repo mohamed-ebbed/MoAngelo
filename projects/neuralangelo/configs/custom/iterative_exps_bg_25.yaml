@@ -1,8 +1,9 @@
 iters_per_frame: 10000
-_parent_: projects/neuralangelo/configs/neus2_less_iter.yaml
+_parent_: projects/neuralangelo/configs/base.yaml
 data:
     type: projects.neuralangelo.multicam_data
     canonical: false
+    num_frames: 25
     target_frame: 2
     readjust:
         center:
