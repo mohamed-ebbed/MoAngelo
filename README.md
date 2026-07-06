@@ -1,4 +1,4 @@
-# MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes
+# [3DV 2026] MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes
 
 Official implementation of **MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes**, presented at 3DV 2026.
 
