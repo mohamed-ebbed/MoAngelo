@@ -1,5 +1,7 @@
 # [3DV 2026] MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes
 
+[Paper (arXiv)](https://arxiv.org/abs/2509.15892) · [Project page](https://geometryinml.cs.uni-bonn.de/publications/2026-3dv-moangelo.html) · [BibTeX](#citation)
+
 Official implementation of **MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes**, presented at 3DV 2026.
 
 This codebase is built on top of [NeuralAngelo](https://github.com/nvlabs/neuralangelo).
@@ -27,6 +29,8 @@ We present a novel framework for highly detailed dynamic reconstruction that ext
 3. [Canonical Optimization](#canonical-optimization)
 4. [Dynamic Optimization](#dynamic-optimization)
 5. [Mesh Extraction](#mesh-extraction)
+6. [License](#license)
+7. [Citation](#citation)
 
 ---
 
@@ -42,7 +46,7 @@ We present a novel framework for highly detailed dynamic reconstruction that ext
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/MoAngelo.git
+git clone https://github.com/mohamed-ebbed/MoAngelo.git
 cd MoAngelo
 ```
 
@@ -191,6 +195,8 @@ python train.py \
 
 Checkpoints and logs are saved under `logs/canonical/<scene>_canonical/`.
 
+> **Note:** `--wandb` and `--wandb_name` enable logging to [Weights & Biases](https://wandb.ai/). They are optional; remove both flags if you do not use W&B.
+
 ### Key config parameters
 
 | Parameter | Value | Description |
@@ -226,6 +232,8 @@ python train.py \
 
 The training loop iterates over each frame from `time_step=2` to `data.num_frames`, saving a per-frame checkpoint.
 
+> **Note:** `--wandb` and `--wandb_name` enable logging to [Weights & Biases](https://wandb.ai/). They are optional; remove both flags if you do not use W&B.
+
 ---
 
 ## Mesh Extraction
@@ -247,4 +255,36 @@ python extract_mesh.py \
     --output_file=mesh.ply \
     --resolution=2048 \
     --block_res=128
+```
+
+---
+
+## License
+
+MoAngelo is built on [Neuralangelo](https://github.com/NVlabs/neuralangelo) and is distributed under the NVIDIA Source Code License (see [LICENSE.md](LICENSE.md)). It may be used for research and other non-commercial purposes only. Third-party components in `third_party/` are subject to their own licenses.
+
+---
+
+## Citation
+
+If you find MoAngelo useful for your research, please cite:
+
+```bibtex
+@inproceedings{ebbed2026moangelo,
+  title={MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes},
+  author={Ebbed, Mohamed and L\"ahner, Zorah},
+  booktitle={International Conference on 3D Vision (3DV)},
+  year={2026}
+}
+```
+
+If you use this code, please also cite Neuralangelo:
+
+```
+@inproceedings{li2023neuralangelo,
+  title={Neuralangelo: High-Fidelity Neural Surface Reconstruction},
+  author={Li, Zhaoshuo and M\"uller, Thomas and Evans, Alex and Taylor, Russell H and Unberath, Mathias and Liu, Ming-Yu and Lin, Chen-Hsuan},
+  booktitle={IEEE Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  year={2023}
+}
 ```

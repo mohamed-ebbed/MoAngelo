@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the MoAngelo paper below."
+title: "MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes"
+type: software
+authors:
+  - given-names: Mohamed
+    family-names: Ebbed
+  - given-names: Zorah
+    family-names: Lähner
+repository-code: "https://github.com/mohamed-ebbed/MoAngelo"
+url: "https://geometryinml.cs.uni-bonn.de/publications/2026-3dv-moangelo.html"
+license-url: "https://github.com/NVlabs/neuralangelo/blob/main/LICENSE.md"
+keywords:
+  - neural surface reconstruction
+  - dynamic reconstruction
+  - 4D reconstruction
+  - SDF
+  - Neuralangelo
+preferred-citation:
+  type: conference-paper
+  title: "MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes"
+  authors:
+    - given-names: Mohamed
+      family-names: Ebbed
+    - given-names: Zorah
+      family-names: Lähner
+  collection-title: "International Conference on 3D Vision (3DV)"
+  conference:
+    name: "International Conference on 3D Vision (3DV)"
+  year: 2026
+  url: "https://arxiv.org/abs/2509.15892"
+  identifiers:
+    - type: other
+      value: "arXiv:2509.15892"
+      description: arXiv preprint
