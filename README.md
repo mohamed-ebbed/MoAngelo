@@ -2,6 +2,12 @@
 
 [Paper (arXiv)](https://arxiv.org/abs/2509.15892) · [Project page](https://mohamed-ebbed.github.io/MoAngelo/) · [Lab page](https://geometryinml.cs.uni-bonn.de/publications/2026-3dv-moangelo.html) · [BibTeX](#citation)
 
+<p align="center">
+  <img src="assets/moangelo_teaser.png" alt="MoAngelo reconstructs detailed meshes of a moving person from multi-view video; GauSTAR's reconstructions of the same frames are smoother and lose detail." width="100%">
+</p>
+
+MoAngelo produces more detailed geometry than competitors and avoids smoothing out details. Our method starts from a static template reconstruction using NeuralAngelo. However, in contrast to previous approaches, our template is flexible and is refined while optimizing the deformation fields, which leads to better accuracy.
+
 Official implementation of **MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes**, presented at 3DV 2026.
 
 This codebase is built on top of [NeuralAngelo](https://github.com/nvlabs/neuralangelo).
