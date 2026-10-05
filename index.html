@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes</title>
+  <meta name="description" content="MoAngelo (3DV 2026) reconstructs highly detailed, temporally consistent surfaces of dynamic scenes from multi-view videos by jointly refining a NeuralAngelo template and per-frame deformation fields.">
+  <meta name="keywords" content="MoAngelo, dynamic surface reconstruction, 4D reconstruction, neural surface reconstruction, SDF, NeuralAngelo, deformation field, multi-view video, ActorsHQ, 3DV 2026">
+  <meta name="author" content="Mohamed Ebbed, Zorah Lähner">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mohamed-ebbed.github.io/MoAngelo/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="University of Bonn and Lamarr Institute">
+  <meta property="og:title" content="MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes (3DV 2026)">
+  <meta property="og:description" content="Highly detailed dynamic surface reconstruction from multi-view videos by jointly refining a NeuralAngelo template and per-frame deformation fields.">
+  <meta property="og:url" content="https://mohamed-ebbed.github.io/MoAngelo/">
+  <meta property="og:image" content="https://mohamed-ebbed.github.io/MoAngelo/static/images/social_preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MoAngelo reconstructs detailed dynamic human surfaces from multi-view video, compared to GauSTAR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes (3DV 2026)">
+  <meta name="twitter:description" content="Highly detailed dynamic surface reconstruction from multi-view videos by jointly refining a NeuralAngelo template and per-frame deformation fields.">
+  <meta name="twitter:image" content="https://mohamed-ebbed.github.io/MoAngelo/static/images/social_preview.jpg">
+
+  <!-- Google Scholar -->
+  <meta name="citation_title" content="MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes">
+  <meta name="citation_author" content="Ebbed, Mohamed">
+  <meta name="citation_author" content="Lähner, Zorah">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="International Conference on 3D Vision (3DV)">
+  <meta name="citation_arxiv_id" content="2509.15892">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2509.15892">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes",
+    "description": "Highly detailed dynamic surface reconstruction from multi-view videos by jointly refining a NeuralAngelo template and per-frame deformation fields.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Mohamed Ebbed",
+        "url": "https://mohamed-ebbed.github.io",
+        "affiliation": [
+          {"@type": "Organization", "name": "University of Bonn"},
+          {"@type": "Organization", "name": "Lamarr Institute for Machine Learning and Artificial Intelligence"}
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Zorah Lähner",
+        "affiliation": [
+          {"@type": "Organization", "name": "University of Bonn"},
+          {"@type": "Organization", "name": "Lamarr Institute for Machine Learning and Artificial Intelligence"}
+        ]
+      }
+    ],
+    "datePublished": "2025-09-19",
+    "isPartOf": {"@type": "PublicationEvent", "name": "International Conference on 3D Vision (3DV) 2026"},
+    "url": "https://mohamed-ebbed.github.io/MoAngelo/",
+    "image": "https://mohamed-ebbed.github.io/MoAngelo/static/images/social_preview.jpg",
+    "sameAs": ["https://arxiv.org/abs/2509.15892", "https://github.com/mohamed-ebbed/MoAngelo"],
+    "keywords": ["dynamic surface reconstruction", "4D reconstruction", "neural implicit surfaces", "NeuralAngelo", "ActorsHQ"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+
+  <!-- Title, authors, links -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes</h1>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><a href="https://mohamed-ebbed.github.io" target="_blank" rel="noopener">Mohamed Ebbed</a></span>
+          <span class="author-block"><a href="https://geometryinml.cs.uni-bonn.de/" target="_blank" rel="noopener">Zorah Lähner</a></span>
+        </div>
+
+        <div class="publication-affiliations">
+          University of Bonn &middot; Lamarr Institute for Machine Learning and Artificial Intelligence
+        </div>
+
+        <div class="publication-venue">3DV 2026</div>
+
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://arxiv.org/pdf/2509.15892" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2509.15892" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/mohamed-ebbed/MoAngelo" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="#BibTeX" class="button is-normal is-rounded is-dark">
+              <span class="icon"><i class="fas fa-quote-right"></i></span>
+              <span>BibTeX</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img class="teaser-image" src="static/images/moangelo_teaser.png" width="2400" height="1350"
+             alt="Multi-view video of a moving person is reconstructed by MoAngelo into detailed meshes; GauSTAR's meshes of the same frames are smoother and lose detail.">
+        <h2 class="subtitle has-text-centered">
+          We present <b>MoAngelo</b>, a dynamic multi-view reconstruction method that produces more detailed geometry than competitors and avoids smoothing out details. Our method starts from a static template reconstruction using NeuralAngelo. However, in contrast to previous approaches, our template is flexible and is refined while optimizing the deformation fields, which leads to better accuracy.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Dynamic scene reconstruction from multi-view videos remains a fundamental challenge in computer vision. While recent neural surface reconstruction methods have achieved remarkable results in static 3D reconstruction, extending these approaches with comparable quality for dynamic scenes introduces significant computational and representational challenges. Existing dynamic methods focus on novel-view synthesis, therefore, their extracted meshes tend to be noisy. Even approaches aiming for geometric fidelity often result in too smooth meshes due to the ill-posedness of the problem. We present a novel framework for highly detailed dynamic reconstruction that extends the static 3D reconstruction method NeuralAngelo to work in dynamic settings. To that end, we start with a high-quality template scene reconstruction from the initial frame using NeuralAngelo, and then jointly optimize deformation fields that track the template and refine it based on the temporal sequence. This flexible template allows updating the geometry to include changes that cannot be modeled with the deformation field, for instance occluded parts or the changes in the topology. We show superior reconstruction accuracy in comparison to previous state-of-the-art methods on the ActorsHQ dataset.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <figure class="framework-figure">
+        <div class="framework-overlay">
+          <img src="static/images/framework.png" width="465" height="500"
+               alt="Framework overview: a NeuralAngelo-initialized template is deformed to each observation frame, and gradients from the deformation refine the template.">
+          <span class="fw-label" style="left:17%; bottom:5.6%"><i>f</i><sub>sdf</sub></span>
+          <span class="fw-label" style="left:56.5%; bottom:5.6%">observation frame <i>t</i></span>
+          <span class="fw-label" style="left:41%; bottom:87%"><i>f</i><sub>deform</sub><sup><i>t</i></sup></span>
+        </div>
+        <div class="fw-below">&nabla;<i>f</i><sub>deform</sub><sup><i>t</i></sup> refines <i>f</i><sub>sdf</sub></div>
+        <figcaption class="figure-caption">
+          Overview of the joint optimization of the template <i>f</i><sub>sdf</sub> and the deformation to each observation frame <i>f</i><sub>deform</sub><sup><i>t</i></sup>. The movement for frame <i>t</i> is stored in a deformation field <i>f</i><sub>deform</sub><sup><i>t</i></sup> and optimized based on the current state of the template <i>f</i><sub>sdf</sub>. However, the gradient information of this update is propagated to <i>f</i><sub>sdf</sub>, which is refined in turn.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Video comparison -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Dynamic Comparison</h2>
+      <video class="comparison-video" autoplay muted loop playsinline controls preload="metadata"
+             poster="static/images/comparisons_poster.jpg" width="1852" height="924">
+        <source src="static/videos/comparisons.mp4" type="video/mp4">
+      </video>
+      <p class="figure-caption">
+        Reconstructed mesh sequences from ActorsHQ: MoAngelo (left) against GauSTAR, Tensor4D, HumanRF and the ground truth (right).
+      </p>
+    </div>
+  </section>
+
+  <!-- Static qualitative comparison -->
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Qualitative Comparison</h2>
+      <div class="comparison-scroll">
+        <div class="comparison-table">
+          <div></div>
+          <div class="method-name">Tensor4D</div>
+          <div class="method-name">GauSTAR</div>
+          <div class="method-name">HumanRF</div>
+          <div class="method-name is-ours">MoAngelo (ours)</div>
+          <div class="method-name">Ground truth</div>
+
+          <div class="row-name">Actor1</div>
+          <img loading="lazy" src="static/images/static_comparison/tensor4d/actor1.png" alt="Tensor4D, Actor1">
+          <img loading="lazy" src="static/images/static_comparison/gaustar/actor1.png" alt="GauSTAR, Actor1">
+          <img loading="lazy" src="static/images/static_comparison/actorhq/actor1.png" alt="HumanRF, Actor1">
+          <img loading="lazy" src="static/images/static_comparison/moangelo/actor1.png" alt="MoAngelo, Actor1" class="is-ours">
+          <img loading="lazy" src="static/images/static_comparison/GT/actor1.png" alt="Ground truth, Actor1">
+
+          <div class="row-name">Actor5</div>
+          <img loading="lazy" src="static/images/static_comparison/tensor4d/actor5.png" alt="Tensor4D, Actor5">
+          <img loading="lazy" src="static/images/static_comparison/gaustar/actor5.png" alt="GauSTAR, Actor5">
+          <img loading="lazy" src="static/images/static_comparison/actorhq/actor5.png" alt="HumanRF, Actor5">
+          <img loading="lazy" src="static/images/static_comparison/moangelo/actor5.png" alt="MoAngelo, Actor5" class="is-ours">
+          <img loading="lazy" src="static/images/static_comparison/GT/actor5.png" alt="Ground truth, Actor5">
+
+          <div class="row-name">Actor7</div>
+          <img loading="lazy" src="static/images/static_comparison/tensor4d/actor7.png" alt="Tensor4D, Actor7">
+          <img loading="lazy" src="static/images/static_comparison/gaustar/actor7.png" alt="GauSTAR, Actor7">
+          <img loading="lazy" src="static/images/static_comparison/actorhq/actor7.png" alt="HumanRF, Actor7">
+          <img loading="lazy" src="static/images/static_comparison/moangelo/actor7.png" alt="MoAngelo, Actor7" class="is-ours">
+          <img loading="lazy" src="static/images/static_comparison/GT/actor7.png" alt="Ground truth, Actor7">
+
+          <div class="row-name">Actor8</div>
+          <img loading="lazy" src="static/images/static_comparison/tensor4d/actor8.png" alt="Tensor4D, Actor8">
+          <img loading="lazy" src="static/images/static_comparison/gaustar/actor8.png" alt="GauSTAR, Actor8">
+          <img loading="lazy" src="static/images/static_comparison/actorhq/actor8.png" alt="HumanRF, Actor8">
+          <img loading="lazy" src="static/images/static_comparison/moangelo/actor8.png" alt="MoAngelo, Actor8" class="is-ours">
+          <img loading="lazy" src="static/images/static_comparison/GT/actor8.png" alt="Ground truth, Actor8">
+        </div>
+      </div>
+      <p class="figure-caption">
+        Qualitative results of competitors and MoAngelo (our method) on four scenes from the ActorsHQ dataset. Our method reconstructs the highest-fidelity geometry without unnecessary noise and does not have major failure cases.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quantitative results -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+      <div class="results-scroll">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Scene</th>
+              <th>Tensor4D <span class="cite">CVPR 2023</span></th>
+              <th>GauSTAR <span class="cite">CVPR 2025</span></th>
+              <th>HumanRF <span class="cite">TOG 2023</span></th>
+              <th class="is-ours">Ours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Actor1</td><td>0.0150</td><td>0.00833</td><td>0.0091</td><td class="is-ours">0.0057</td></tr>
+            <tr><td>Actor5</td><td>0.0187</td><td>0.2200</td><td>0.1100</td><td class="is-ours">0.0037</td></tr>
+            <tr><td>Actor6_1</td><td>0.0160</td><td>0.0077</td><td>0.0087</td><td class="is-ours">0.0068</td></tr>
+            <tr><td>Actor6_2</td><td>0.1830</td><td>0.0078</td><td>0.0088</td><td class="is-ours">0.0058</td></tr>
+            <tr><td>Actor7</td><td>0.0110</td><td>0.0067</td><td>0.0046</td><td class="is-ours">0.0035</td></tr>
+            <tr><td>Actor8</td><td>0.3590</td><td>0.0068</td><td>0.0119</td><td class="is-ours">0.0059</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td>Average</td><td>0.1005</td><td>0.04288</td><td>0.0255</td><td class="is-ours">0.0052</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="figure-caption">
+        <b>Reconstruction accuracy.</b> <i>L</i><sub>1</sub>-Chamfer distance (lower is better) to the ground-truth meshes. MoAngelo provides the most accurate reconstruction on all scenes.
+      </p>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{ebbed2026moangelo,
+  title={MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes},
+  author={Ebbed, Mohamed and L\"ahner, Zorah},
+  booktitle={International Conference on 3D Vision (3DV)},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>, which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              This website is licensed under a <a rel="license noopener" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
