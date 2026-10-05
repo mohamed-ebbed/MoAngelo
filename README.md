@@ -1,6 +1,6 @@
 # [3DV 2026] MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes
 
-[Paper (arXiv)](https://arxiv.org/abs/2509.15892) · [Project page](https://geometryinml.cs.uni-bonn.de/publications/2026-3dv-moangelo.html) · [BibTeX](#citation)
+[Paper (arXiv)](https://arxiv.org/abs/2509.15892) · [Project page](https://mohamed-ebbed.github.io/MoAngelo/) · [Lab page](https://geometryinml.cs.uni-bonn.de/publications/2026-3dv-moangelo.html) · [BibTeX](#citation)
 
 Official implementation of **MoAngelo: Motion-Aware Neural Surface Reconstruction for Dynamic Scenes**, presented at 3DV 2026.
 
